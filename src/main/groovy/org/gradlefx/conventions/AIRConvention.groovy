@@ -27,8 +27,7 @@ class AIRConvention {
     private String storepass = null
     private String applicationDescriptor
     private List<ConfigurableFileTree> includeFileTrees = null
-    private List<String> adtAdditionalOptions = new ArrayList<String>();
-	
+    
     public AIRConvention(Project project) {
         keystore = "${project.name}.p12"
         applicationDescriptor = "src/main/actionscript/${project.name}.xml"
@@ -37,15 +36,7 @@ class AIRConvention {
     void configure(Closure closure) {
         ConfigureUtil.configure(closure, this)
     }
-	
-	List<String> adtAdditionalOptions() {
-		return adtAdditionalOptions;
-	}
-	
-	void adtAdditionalOptions(List<String> adtAdditionalOptions) {
-		this.adtAdditionalOptions = adtAdditionalOptions;
-	}
-	
+
     String getKeystore() {
         return keystore
     }
